@@ -1,40 +1,44 @@
 public class Volaille {
-    private int Poids;
-    private int Numero;
+    public double Poids;
+    public int Id;
+    public static double PrixKg;
+    public static double PoidsAbbatage;
 
-    private int Prix;
-
-    public Volaille(int poids, int numero, int prix) {
+    public Volaille(double poids, int id, double prix) {
         this.Poids = poids;
-        this.Numero = numero;
-        this.Prix = prix;
+        this.Id = id;
+        this.PrixKg = prix;
     }
 
-    public int getPoids() {
+    public double getPoids() {
         return Poids;
     }
 
-    public void setPoids(int poids) {
+    public void setPoids(double poids) {
         Poids = poids;
     }
 
-    public int getNumero() {
-        return Numero;
+    public int getId() {
+        return Id;
     }
 
-    public void setNumero(int numero) {
-        Numero = numero;
+    public void setId(int id) {
+        Id = id;
     }
 
-    public int getPrix() {
-        return Prix;
+    public static double getPrixKg() {
+        return PrixKg;
     }
 
-    public void setPrix(int prix) {
-        Prix = prix;
+    public static void setPrixKg(double prixKg) {
+        PrixKg = prixKg;
     }
 
-    // ---------- METHODE ----------
+    public static double getPoidsAbbatage() {
+        return PoidsAbbatage;
+    }
 
-    public double 
+    public static void setPoidsAbbatage(double poidsAbbatage) {
+        PoidsAbbatage = poidsAbbatage;
+    }
 }

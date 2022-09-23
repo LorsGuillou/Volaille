@@ -1,11 +1,6 @@
 public class Canard extends Volaille {
 
-    int prix;
-
-    public Canard(int poids, int numero,int prixCanard) {
-
-        super(poids, numero, prixCanard);
-
-
+    public Canard(double poids, int id, double prix) {
+        super(poids, id, prix);
     }
 }
