@@ -13,12 +13,17 @@ public class Elevage {
         Canard.setPoidsAbbatage(6);
 
         Terminal.ecrireStringln("Prix du jour :");
-        Terminal.ecrireStringln("Poulets -> Au kilo :  " + Poulet.getPrixKg() + " | A l'unite : " + Poulet.calculPrixPiece() + " | Poids d'abbatage : " + Poulet.getPoidsAbbatage());
-        Terminal.ecrireStringln("Canards -> Au kilo: " + Canard.getPrixKg() + " | A l'unite : " + Canard.calculPrixPiece() + " | Poids d'abbatage : " + Canard.getPoidsAbbatage());
+        Terminal.ecrireStringln("Poulets -> Au kilo :  " + Poulet.getPrixKg() + " | A l'unité : " + Poulet.calculPrixPiece() + " | Poids d'abbatage : " + Poulet.getPoidsAbbatage());
+        Terminal.ecrireStringln("Canards -> Au kilo: " + Canard.getPrixKg() + " | A l'unité : " + Canard.calculPrixPiece() + " | Poids d'abbatage : " + Canard.getPoidsAbbatage());
+        Terminal.sautDeLigne();
 
         enregistrer(elevage);
+        Terminal.ecrireStringln("Elevage après enregistrement : ");
         System.out.println(elevage);
+        Terminal.sautDeLigne();
+        Terminal.ecrireStringln("Abbatage des volailles ayant atteintes le poids adequat...");
         abbatage(elevage);
+        Terminal.ecrireStringln("Elevage après abbatage");
         System.out.println(elevage);
 
     }
