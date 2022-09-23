@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -30,8 +31,8 @@ public class Elevage {
         System.out.println(elevage);
         Terminal.sautDeLigne();
         Terminal.ecrireStringln("Abbatage des volailles ayant atteints le poids adequat...");
-        abbatage(elevage);
         Terminal.sautDeLigne();
+        Terminal.ecrireStringln("Revenu des ventes de volailles : " + abbatage(elevage));
         Terminal.ecrireStringln("Elevage apres abbatage : ");
         System.out.println(elevage);
 
@@ -72,17 +73,23 @@ public class Elevage {
      *
      * @param v the v
      */
-    public static void abbatage (ArrayList<Volaille> v) {
-        for (int i = 0; i < v.size(); i++) {
-            if (v.get(i).getClass().getName().equals("Poulet")) {
-                if (v.get(i).getPoids() >= Poulet.getPoidsAbbatage()) {
+    public static double abbatage (ArrayList<Volaille> v) {
+        int totalPoulet = 0;
+        int totalCanard = 0;
+        ArrayList<Volaille> tmp = new ArrayList<>(v);
+        for (Volaille i : tmp) {
+            if (i instanceof Poulet) {
+                if (i.getPoids() >= Poulet.getPoidsAbbatage()) {
                     v.remove(i);
+                    totalPoulet++;
                 }
-            } else if (v.get(i).getClass().getName().equals("Canard")) {
-                if (v.get(i).getPoids() >= Canard.getPoidsAbbatage()) {
+            } else if (i instanceof Canard) {
+                if (i.getPoids() >= Canard.getPoidsAbbatage()) {
                     v.remove(i);
+                    totalCanard++;
                 }
             }
         }
+        return (totalPoulet * Poulet.calculPrixPiece()) + (totalCanard * Canard.calculPrixPiece());
     }
 }
