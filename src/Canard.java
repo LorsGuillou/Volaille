@@ -1,6 +1,36 @@
 public class Canard extends Volaille {
+    private static double PrixKg;
+    private static double PoidsAbbatage;
 
-    public Canard(double poids, int id, double prix) {
-        super(poids, id, prix);
+    public Canard(double poids) {
+        super(poids);
+    }
+
+    public static double getPrixKg() {
+        return PrixKg;
+    }
+
+    public static void setPrixKg(double prixKg) {
+        PrixKg = prixKg;
+    }
+
+    public static double getPoidsAbbatage() {
+        return PoidsAbbatage;
+    }
+
+    public static void setPoidsAbbatage(double poidsAbbatage) {
+        PoidsAbbatage = poidsAbbatage;
+    }
+
+    public static double calculPrixPiece() {
+        return PrixKg * PoidsAbbatage;
+    }
+
+    @Override
+    public String toString() {
+        return "Canard{" +
+                "poids=" + getPoids() +
+                ", id=" + getId() +
+                '}';
     }
 }
