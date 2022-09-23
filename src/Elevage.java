@@ -21,9 +21,10 @@ public class Elevage {
         Terminal.ecrireStringln("Elevage après enregistrement : ");
         System.out.println(elevage);
         Terminal.sautDeLigne();
-        Terminal.ecrireStringln("Abbatage des volailles ayant atteintes le poids adequat...");
+        Terminal.ecrireStringln("Abbatage des volailles ayant atteints le poids adéquat...");
         abbatage(elevage);
-        Terminal.ecrireStringln("Elevage après abbatage");
+        Terminal.sautDeLigne();
+        Terminal.ecrireStringln("Elevage après abbatage : ");
         System.out.println(elevage);
 
     }
