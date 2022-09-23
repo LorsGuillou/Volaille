@@ -1,10 +1,6 @@
 public class Poulet extends Volaille {
 
-
-    public Poulet(int poids, int numero,int prixPoulet) {
-        super(poids, numero, prixPoulet);
+    public Poulet(double poids, int id, double prix) {
+        super(poids, id, prix);
     }
-
-
-
 }
